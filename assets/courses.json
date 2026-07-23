@@ -1,0 +1,36 @@
+{
+  "courses": [
+    {
+      "id": "c001",
+      "title": "Intro to UI/UX Design",
+      "thumbnailUrl": "https://picsum.photos/seed/course1/400/225",
+      "durationSeconds": 10,
+      "description": "A short primer on UI/UX fundamentals.",
+      "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4"
+    },
+    {
+      "id": "c002",
+      "title": "Digital Marketing Basics",
+      "thumbnailUrl": "https://picsum.photos/seed/course2/400/225",
+      "durationSeconds": 10,
+      "description": "Core concepts every marketer should know.",
+      "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4"
+    },
+    {
+      "id": "c003",
+      "title": "Public Speaking Confidence",
+      "thumbnailUrl": "https://picsum.photos/seed/course3/400/225",
+      "durationSeconds": 10,
+      "description": "Practical tips to speak with confidence.",
+      "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4"
+    },
+    {
+      "id": "c004",
+      "title": "Excel for Beginners",
+      "thumbnailUrl": "https://picsum.photos/seed/course4/400/225",
+      "durationSeconds": 10,
+      "description": "Spreadsheets from zero to comfortable.",
+      "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4"
+    }
+  ]
+}
