@@ -190,134 +190,113 @@ class _EnhancedCourseTile extends StatelessWidget {
     final percentage = (progressFraction * 100).round();
 
     return Container(
-      margin: const EdgeInsets.only(bottom: 18),
+      height: 132,
+      margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(22),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF0F172A).withOpacity(0.06),
-            blurRadius: 18,
-            spreadRadius: 0,
-            offset: const Offset(0, 4),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: const Color(0xFFE5E7EB), width: 1),
       ),
       child: Material(
         color: Colors.transparent,
-        borderRadius: BorderRadius.circular(22),
+        borderRadius: BorderRadius.circular(16),
         child: InkWell(
           onTap: onTap,
-          borderRadius: BorderRadius.circular(22),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(18),
-                      child: Image.network(
-                        course.thumbnailUrl,
-                        width: 116,
-                        height: 116,
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) => Container(
-                          width: 116,
-                          height: 116,
-                          color: const Color(0xFFE2E8F0),
-                          child: const Icon(Icons.movie_creation_outlined, color: Color(0xFF94A3B8), size: 42),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 46,
-                      height: 46,
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.45),
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white.withOpacity(0.8), width: 1.5),
-                      ),
-                      child: const Icon(Icons.play_arrow_rounded, color: Colors.white, size: 28),
-                    ),
-                  ],
+          borderRadius: BorderRadius.circular(16),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  bottomLeft: Radius.circular(16),
                 ),
-                const SizedBox(width: 16),
-                Expanded(
+                child: Image.network(
+                  course.thumbnailUrl,
+                  width: 130,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => Container(
+                    width: 130,
+                    color: const Color(0xFFE2E8F0),
+                    child: const Icon(Icons.movie_creation_outlined, color: Color(0xFF94A3B8), size: 32),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 5),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFEFF6FF),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Icon(Icons.schedule_rounded, size: 15, color: Color(0xFF2563EB)),
-                            const SizedBox(width: 5),
-                            Text(
-                              formatDuration(course.durationSeconds),
-                              style: const TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xFF2563EB),
-                              ),
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFEFF6FF),
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                          ],
-                        ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(Icons.schedule_rounded, size: 13, color: Color(0xFF2563EB)),
+                                const SizedBox(width: 4),
+                                Text(
+                                  formatDuration(course.durationSeconds),
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xFF2563EB),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 10),
                       Text(
                         course.title,
-                        maxLines: 2,
+                        maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF0F172A),
-                          height: 1.25,
                         ),
                       ),
-                      const SizedBox(height: 14),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Text(
+                        course.description,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.grey.shade600,
+                          height: 1.3,
+                        ),
+                      ),
+                      Row(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                isCompleted ? "Completed 🎉" : "Progress",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w600,
-                                  color: isCompleted ? const Color(0xFF16A34A) : const Color(0xFF64748B),
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: LinearProgressIndicator(
+                                value: isCompleted ? 1.0 : progressFraction,
+                                minHeight: 6,
+                                backgroundColor: const Color(0xFFE2E8F0),
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  isCompleted ? const Color(0xFF16A34A) : const Color(0xFF2563EB),
                                 ),
                               ),
-                              Text(
-                                "$percentage%",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w800,
-                                  color: isCompleted ? const Color(0xFF16A34A) : const Color(0xFF2563EB),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
-                          const SizedBox(height: 7),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: LinearProgressIndicator(
-                              value: progressFraction,
-                              minHeight: 10,
-                              backgroundColor: const Color(0xFFE2E8F0),
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                isCompleted ? const Color(0xFF16A34A) : const Color(0xFF2563EB),
-                              ),
+                          const SizedBox(width: 8),
+                          Text(
+                            isCompleted ? "Completed" : "$percentage%",
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              color: isCompleted ? const Color(0xFF16A34A) : const Color(0xFF2563EB),
                             ),
                           ),
                         ],
@@ -325,8 +304,8 @@ class _EnhancedCourseTile extends StatelessWidget {
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

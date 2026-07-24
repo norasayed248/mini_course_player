@@ -138,14 +138,14 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(28),
-              bottomRight: Radius.circular(28),
-            ),
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: _buildPlayerArea(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: _buildPlayerArea(),
+              ),
             ),
           ),
           Padding(
