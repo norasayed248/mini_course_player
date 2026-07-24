@@ -14,7 +14,7 @@
       "thumbnailUrl": "https://picsum.photos/seed/course2/400/225",
       "durationSeconds": 10,
       "description": "Core concepts every marketer should know.",
-      "videoUrl": "https://lorem.video/cat_h264_10s.mp4"
+      "videoUrl": "https://test-videos.co.uk/vids/jellyfish/mp4/h264/360/Jellyfish_360_10s_1MB.mp4"
     },
     {
       "id": "c003",
@@ -22,7 +22,7 @@
       "thumbnailUrl": "https://picsum.photos/seed/course3/400/225",
       "durationSeconds": 10,
       "description": "Practical tips to speak with confidence.",
-      "videoUrl": "https://lorem.video/corgi_h264_10s.mp4"
+      "videoUrl": "https://test-videos.co.uk/vids/sintel/mp4/h264/360/Sintel_360_10s_1MB.mp4"
     },
     {
       "id": "c004",
@@ -30,7 +30,7 @@
       "thumbnailUrl": "https://picsum.photos/seed/course4/400/225",
       "durationSeconds": 10,
       "description": "Spreadsheets from zero to comfortable.",
-      "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4"
+      "videoUrl": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4"
     }
   ]
 }
