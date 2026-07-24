@@ -28,9 +28,7 @@ class ProgressService {
       isComplete ? 0 : positionSeconds,
     );
 
-    if (isComplete) {
-      await prefs.setBool(_completedKeyPrefix + courseId, true);
-    }
+    await prefs.setBool(_completedKeyPrefix + courseId, isComplete);
   }
 
   Future<int> getSavedPositionSeconds(String courseId) async {
