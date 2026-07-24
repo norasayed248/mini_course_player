@@ -44,6 +44,8 @@ This runs:
   screen
 
 ## Project structure
+
+```
 lib/
 models/course.dart Course data model
 services/course_service.dart Loads courses from assets/courses.json
@@ -56,6 +58,7 @@ screens/course_detail_screen.dart Video playback + resume UI (StatefulWidget)
 main.dart App entry point
 assets/courses.json Mock course catalogue
 test/ Unit + widget tests
+```
 
 ## Key dependencies
 
